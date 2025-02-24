@@ -21,7 +21,15 @@ app.use(logger('dev'));
 
 // ROUTES
 // Start defining your routes here:
+app.get('/', (req, res, next) => {
+    /* console.log(req); */
+    res.sendFile(__dirname + '/views/home.html');
+});
 
+app.get('/blog', (req, res) => {
+    /* console.log(req); */
+    res.sendFile(__dirname + '/views/blog.html');
+});
 
 
 // START THE SERVER
