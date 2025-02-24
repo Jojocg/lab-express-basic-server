@@ -3,6 +3,8 @@
 const express = require('express');
 const logger = require('morgan');
 
+//Import files
+const projects = require("./data/projects.json");
 
 // CREATE EXPRESS APP
 // Here you should create your Express app:
@@ -21,16 +23,23 @@ app.use(logger('dev'));
 
 // ROUTES
 // Start defining your routes here:
+
+//Iteration 3
 app.get('/', (req, res, next) => {
     /* console.log(req); */
     res.sendFile(__dirname + '/views/home.html');
 });
 
+//Iteration 4
 app.get('/blog', (req, res) => {
     /* console.log(req); */
     res.sendFile(__dirname + '/views/blog.html');
 });
 
+//Iteration 5
+app.get('/api/projects', (req, res) => {
+    res.json(projects);
+});
 
 // START THE SERVER
 // Make your Express server listen on port 5005:
