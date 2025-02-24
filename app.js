@@ -5,6 +5,7 @@ const logger = require('morgan');
 
 //Import files
 const projects = require("./data/projects.json");
+const articles = require("./data/articles.json");
 
 // CREATE EXPRESS APP
 // Here you should create your Express app:
@@ -39,6 +40,11 @@ app.get('/blog', (req, res) => {
 //Iteration 5
 app.get('/api/projects', (req, res) => {
     res.json(projects);
+});
+
+//Iteration 6
+app.get('/api/articles', (req, res) => {
+    res.json(articles);
 });
 
 // START THE SERVER
